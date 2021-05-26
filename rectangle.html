@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myRectangle" width="800px" height="600px" style="border: 1px solid black; background-color: bisque" ></canvas>
+<div class="Rectangle" ></div>
+<script>
+  let rectangle = document.getElementById('myRectangle');
+  let pen = rectangle.getContext('2d');
+  function creatRect(number) {
+      for (let i = 0; i < number; i++) {
+          let x = randomNumber(0,canvas.width);
+          let y = randomNumber(0,canvas.height);
+          let area = randomNumber(70,150);
+          let color = randomColor();
+          let rect = new Rectangle(x,y,radius,color);
+          rectangle.renderImg(canvas);
+      }
+  }
+  function randomNumber(min,max) {
+      return Math.floor(Math.random()*max-min)+min;
+  }
+  function randomColor() {
+      let r = randomNumber(0,255);
+      let g = randomNumber(0,255);
+      let b = randomNumber(0,255);
+      // return "rgb("+r+","+g+","+b+')';
+      return `rgb(${r},${g},${b})`;
+  }
+
+  creatRect(20);
+</script>
+</body>
+</html>
